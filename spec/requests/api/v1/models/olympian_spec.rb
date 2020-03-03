@@ -7,10 +7,13 @@ describe Olympian, type: :model do
     it { should validate_presence_of :age }
     it { should validate_presence_of :height }
     it { should validate_presence_of :weight }
-    it { should validate_presence_of :team }
     it { should validate_presence_of :games }
-    it { should validate_presence_of :sport }
-    it { should validate_presence_of :event }
-    it { should validate_presence_of :medal }
+  end
+
+  describe 'relationships' do
+    it { should belong_to :team }
+    it { should belong_to :sport }
+    it { should have_many :medals }
+    it { should have_many :events }
   end
 end

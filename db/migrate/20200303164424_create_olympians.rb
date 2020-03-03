@@ -6,11 +6,9 @@ class CreateOlympians < ActiveRecord::Migration[6.0]
       t.integer :age
       t.integer :height
       t.integer :weight
-      t.string :team
       t.string :games
-      t.string :sport
-      t.string :event
-      t.string :medal
+      t.references :team, foreign_key: true
+      t.references :sport, foreign_key: true
 
       t.timestamps
     end
