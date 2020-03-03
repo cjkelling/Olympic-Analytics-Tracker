@@ -16,14 +16,18 @@ class Olympian < ApplicationRecord
   end
 
   def self.youngest
-    select('olympians.*')
-    .order('age')
-    .limit(1).first
+    order('age').limit(1).first
   end
 
   def self.oldest
-    select('olympians.*')
-    .order('age desc')
-    .limit(1).first
+    order('age desc').limit(1).first
+  end
+
+  def self.average_age
+    average(:age).round(1).to_f
+  end
+
+  def self.average_weight(sex)
+    where(sex: sex).average(:weight).round(1).to_f
   end
 end
