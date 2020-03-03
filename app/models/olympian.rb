@@ -20,4 +20,10 @@ class Olympian < ApplicationRecord
     .order('age')
     .limit(1).first
   end
+
+  def self.oldest
+    select('olympians.*')
+    .order('age desc')
+    .limit(1).first
+  end
 end
