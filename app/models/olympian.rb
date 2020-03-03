@@ -14,4 +14,10 @@ class Olympian < ApplicationRecord
   def total_medals_won
     medals.where("medal != 'NA'").count
   end
+
+  def self.youngest
+    select('olympians.*')
+    .order('age')
+    .limit(1).first
+  end
 end
