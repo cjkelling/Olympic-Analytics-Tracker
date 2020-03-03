@@ -24,10 +24,10 @@ class Olympian < ApplicationRecord
   end
 
   def self.average_age
-    average(:age).round(1).to_f
+    average('age').round(1).to_f
   end
 
   def self.average_weight(sex)
-    where(sex: sex).average(:weight).round(1).to_f
+    where(sex: sex).average('weight').round(1).to_f
   end
 end
