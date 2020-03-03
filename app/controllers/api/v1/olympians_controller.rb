@@ -8,4 +8,8 @@ class Api::V1::OlympiansController < ApplicationController
       render json: Olympian.all.map { |olympian| OlympianSerializer.new(olympian)}
     end
   end
+
+  def stats
+    render json: StatSerializer.new
+  end
 end
