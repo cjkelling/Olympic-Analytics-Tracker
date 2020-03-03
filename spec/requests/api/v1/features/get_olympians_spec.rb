@@ -6,7 +6,7 @@ describe 'Olympians Data Request' do
     medal = create(:medal, olympian_id: olympian.id)
 
     olympian_2 = create(:olympian, name: 'Ahmad Abughaush')
-    medal_2 = create(:medal, medal: 'NA')
+    medal_2 = create(:medal, olympian_id: olympian_2.id, medal: 'NA')
 
     get '/api/v1/olympians'
 
