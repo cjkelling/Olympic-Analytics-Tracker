@@ -11,7 +11,7 @@ class Olympian < ApplicationRecord
   has_many :medals
   has_many :events, through: :medals
 
-  # def all_olympians
-  #   olympians.group(:name).select('name, team, age, sport, count(medal) as total_medals_won')
-  # end
+  def total_medals_won
+    medals.where("medal != 'NA'").count
+  end
 end
