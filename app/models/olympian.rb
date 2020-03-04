@@ -30,4 +30,8 @@ class Olympian < ApplicationRecord
   def self.average_weight(sex)
     where(sex: sex).average('weight').round(1).to_f
   end
+
+  def event_medal(event)
+    medals.find_by(event_id: event).medal
+  end
 end
