@@ -2,7 +2,7 @@ require 'csv'
 
 task import_csv: :environment do
   CSV.foreach('db/data/olympic_data_2016.csv', headers: true) do |row|
-    row = (row.to_hash)
+    row = row.to_hash
 
     team = Team.find_or_create_by(
       team: row['Team']
@@ -25,7 +25,7 @@ task import_csv: :environment do
       weight: row['Weight'],
       team_id: team.id,
       games: row['Games'],
-      sport_id: sport.id,
+      sport_id: sport.id
     )
 
     Medal.find_or_create_by(

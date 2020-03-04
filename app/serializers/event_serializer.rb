@@ -5,8 +5,6 @@ class EventSerializer
   end
 
   def get_events(sport)
-    sport.events.map do |event|
-      event.event
-    end
+    sport.events.map(&:event)
   end
 end
