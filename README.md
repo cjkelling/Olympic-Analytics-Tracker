@@ -20,12 +20,13 @@
 >
 > [Documentation](#documentation)
 >
->>[Olympians](#olympians)
->>[Youngest Olympian](#youngest-olympian)
->>[Oldest Olympian](#oldest-olympian)
->>[Olympian Stats](#olympian-stats)
->>[Events](#events)
->>[Event Medalists](#event-medalists)
+>>[Enpoints]
+>>>[Olympians](#olympians)
+>>>[Youngest Olympian](#youngest-olympian)
+>>>[Oldest Olympian](#oldest-olympian)
+>>>[Olympian Stats](#olympian-stats)
+>>>[Events](#events)
+>>>[Event Medalists](#event-medalists)
 
 ## Description
 
