@@ -4,11 +4,11 @@ describe 'Events Data Request' do
   it 'sends data for all Events' do
     sport = create(:sport, sport: 'Diving')
 
-    event = create(:event, sport_id: sport.id)
-    event2 = create(:event, event: 'The Small Dive', sport_id: sport.id)
+    create(:event, sport_id: sport.id)
+    create(:event, event: 'The Small Dive', sport_id: sport.id)
 
     sport2 = create(:sport, sport: 'Wrestling')
-    event3 = create(:event, event: 'The Floor', sport_id: sport2.id)
+    create(:event, event: 'The Floor', sport_id: sport2.id)
 
     get '/api/v1/events'
 

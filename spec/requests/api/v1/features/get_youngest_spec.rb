@@ -3,10 +3,10 @@ require 'rails_helper'
 describe 'Youngest Olympian Data Request' do
   it 'sends data for youngest Olympian' do
     olympian = create(:olympian)
-    medal = create(:medal, olympian_id: olympian.id)
+    create(:medal, olympian_id: olympian.id)
 
-    olympian_2 = create(:olympian, name: 'Ana Iulia Dascl', age: 13)
-    medal_2 = create(:medal, olympian_id: olympian_2.id, medal: 'NA')
+    olympian2 = create(:olympian, name: 'Ana Iulia Dascl', age: 13)
+    create(:medal, olympian_id: olympian2.id, medal: 'NA')
 
     get '/api/v1/olympians?age=youngest'
 
