@@ -3,14 +3,14 @@ require 'rails_helper'
 describe 'Olympians Stats Request' do
   it 'sends statistics for total Olympians' do
     olympian = create(:olympian, name: 'Julie Brougham', sex: 'F', weight: 110, age: 62)
-    medal = create(:medal, olympian_id: olympian.id)
-    olympian = create(:olympian, name: 'Julie Brougham', sex: 'F', weight: 120, age: 22)
-    medal = create(:medal, olympian_id: olympian.id)
+    create(:medal, olympian_id: olympian.id)
+    olympian2 = create(:olympian, name: 'Julie Brougham', sex: 'F', weight: 120, age: 22)
+    create(:medal, olympian_id: olympian2.id)
 
-    olympian_2 = create(:olympian, name: 'Ahmad Abughaush')
-    medal_2 = create(:medal, olympian_id: olympian_2.id, medal: 'NA')
-    olympian_2 = create(:olympian, name: 'Ahmad Abughaush', weight: 135, age: 28)
-    medal_2 = create(:medal, olympian_id: olympian_2.id, medal: 'NA')
+    olympian3 = create(:olympian, name: 'Ahmad Abughaush')
+    create(:medal, olympian_id: olympian3.id, medal: 'NA')
+    olympian4 = create(:olympian, name: 'Ahmad Abughaush', weight: 135, age: 28)
+    create(:medal, olympian_id: olympian4.id, medal: 'NA')
 
     get '/api/v1/olympian_stats'
 
