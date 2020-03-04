@@ -25,4 +25,10 @@ describe 'Medalists for Event Request' do
     expect(medalists['medalist'][1]['age']).to eq(18)
     expect(medalists['medalist'][1]['medal']).to eq('Silver').or eq('Gold')
   end
+
+  it 'sends error message if ID cannot be found' do
+    get '/api/v1/events/99/medalists'
+
+    expect(response.body).to eq('Error. Could not find event with the ID.')
+  end
 end
