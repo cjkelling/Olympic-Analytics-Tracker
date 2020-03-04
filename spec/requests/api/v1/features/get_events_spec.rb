@@ -3,10 +3,8 @@ require 'rails_helper'
 describe 'Events Data Request' do
   it 'sends data for all Events' do
     sport = create(:sport, sport: 'Diving')
-
     create(:event, sport_id: sport.id)
     create(:event, event: 'The Small Dive', sport_id: sport.id)
-
     sport2 = create(:sport, sport: 'Wrestling')
     create(:event, event: 'The Floor', sport_id: sport2.id)
 
